@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function displayData(){
+			document.getElementById('demo').innerHTML = new Date();
+		}		
+		
+		//1. onload
+		//2. body 뒤 ....
+		//document.getElementById('mybtn').onclick = displayData();
+		
+		window.onload =function(){
+			//document.getElementById('mybtn').onclick = displayData();
+			//onload 시점에 displayData() 호출
+			
+			//동적으로 처리 함수의  () (x)
+			document.getElementById('mybtn').onclick = displayData;
+		}
+	</script>
+</head>
+<body>
+	<button id="mybtn">눌러봐</button>
+	<br>
+	<p id="demo"></p>
+</body>
+</html>

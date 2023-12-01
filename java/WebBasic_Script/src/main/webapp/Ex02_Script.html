@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*
+		 javascript : 자원 (객체들을) >> 웹브라우져 내장하고 객체, 함수 사용가능 
+		*/
+		
+		window.document.write("방가방가<br>");
+		document.write("window객체 생략<br>");
+		
+		//디버깅 , 오류 결과 ....
+		console.log("디버깅 , 결과 미리보기 , 오류 메시지 확인");
+		console.log(10+10);
+		
+		// var , let , const
+		// var  는 사용하지 않아요 ... 기존 소스 : 유지보수
+		var num; //타입이 정해져 있지 않아요 (정수 , 실수 , 날짜 , 문자열 ...할 수 있어요)
+		console.log(num); //undefined 정의 되지 않았어
+		
+		num = 10; //값을 가지는 순간 타입 확정
+		console.log(num);
+		console.log(typeof(num)); //number
+		
+		//let element = window.document.forms[0].elements[0];
+		//console.log(element);
+		//Cannot read properties of undefined (reading 'elements')
+		
+		//*******라인단위 위 ... 아래 로 실행된다 ...... ^^!
+		//함수기반으로 짜면 된다 .....
+		function data(){
+				let element = window.document.forms[0].elements[0];
+				console.log(element);
+		}
+	</script>
+</head>
+<body>
+		<form action="#" method="get" name="myform">
+			<input type="text" name="userid" value="hong"><br>
+			<input type="password" name="pwd" value="1004"><br>
+			<input type="submit" value="전송">
+		</form>
+		<input type="button" value="함수호출" onclick="data()">
+</body>
+</html>
+<script>
+	let element = window.document.forms[0].elements[0];
+	console.log(element); //<input type="text" name="userid" value="hong">
+	console.log(element.value);
+	console.log(element.value.length);
+</script>
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	 
+		//jQuery.getJSON( url [, data ] [, success ] )
+		//Description: Load JSON-encoded data from the server using a GET HTTP request.
+		//getJSON >>  dataType:"json"
+		$(function(){
+		   //
+			$('#btn .btnload').click(function(){
+				// 번호 , 이름 출력하세요 display  div  태그에 ....
+				//$.each ....
+				$.getJSON("Ex04_json.json",function(data){
+					//응답이 왔고 응답이 정상이라면
+					//console.log(data);
+					$.each(data,function(index ,obj){
+						  //console.log(obj.num +  " / " + obj.Name);
+						  $('#display').append(obj.num +  " / " + obj.Name + "<br>");
+					});
+				});
+			});
+		});
+	</script>
+<body>
+		<div id="btn">
+			<div class="btnload">JSON DATA LOAD</div>
+		</div>
+		<div id="display"></div>
+</body>
+</html>

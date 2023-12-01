@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		let myobj = {name:"john" , age:30 , city:"seoul"};
+		//https://www.w3schools.com/js/js_json_parse.asp
+		//https://www.w3schools.com/js/js_json_stringify.asp
+		
+		//json 형태의 문자열 --> 객체로
+		//json 객체 --> 문자열
+		
+		const str = JSON.stringify(myobj);
+		console.log(str); //'{"name":"john","age":30,"city":"seoul"}'
+		console.log(typeof(str)); //string
+		
+		//문자열 데이터 -> 객체 데이터  (조건 : JSON 문자열에서 반드시 속성값은 "" ,'' 안에 정의)
+		//let myobj2 = '{name:"john" , age:30 , city:"seoul"}';
+		//console.log(JSON.parse(myobj2));
+		//주의 사항 .....
+		let myString = '{"name":"john" , "age":30 , "city":"seoul"}';
+		console.log(JSON.parse(myString));
+		
+		strObj =  JSON.parse(myString);
+		
+		//암기
+		console.log(strObj.name);//객체.속성명
+		console.log(strObj["name"]);//객체["속성명"]
+		
+		/*
+		   index.html , index.htm
+		   css >> common.css
+		   javascript >> common.js
+		   json >> common.json >> 형식(MIME) >> application/json
+		   xml  >> common.xml
+		   
+		*/
+		let mycars;
+		mycars = {"name":"king" , "age":20 , "cars":[
+		                                              {"name":"Ford","model":["Mustang","Focus"]},
+		                                              {"name":"BMW","model":["520","x5","x7"]},
+		                                              {"name":"Fiat","model":["500","panda"]}
+		                                            ]
+		         };
+		         
+		/*
+		신입 개발자 
+		JSON 데이터에서 원하는 값을 추출해서 화면에 이쁘게 출력
+		//차량이름 >> 모델명 출력
+		//Ford - Mustang Focus 출력
+		//BMW  - 520 x5 x7 ...
+		*/   
+		 console.log(mycars);
+		 console.log(mycars.cars);
+		 for(let index in mycars.cars){
+				document.write("차량이름 : " + mycars.cars[index].name);
+				//console.log(mycars.cars[index].model);
+					for(let i in mycars.cars[index].model){
+						document.write(" 차량모델 : " + mycars.cars[index].model[i]);
+					}
+				document.write("<hr>");
+		} 
+	</script>
+</head>
+<body>
+
+</body>
+</html>

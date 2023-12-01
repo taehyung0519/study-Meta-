@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+</head>
+<body>
+	<p>scope</p>
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+</body>
+</html>
+<script>
+	var gname="world"; //global (현재 이 페이지 어디에든 사용가능)
+	function myfunction(){
+		//함수안
+		aaa = "아무개" //변수 인정 (global ...) ..사용금지
+		console.log("함수 aaa: " + aaa );
+		
+		var carname = "volvo"; //local
+		document.getElementById("demo1").innerHTML = typeof(carname) + "/" + carname +"<hr>"
+		document.getElementById("demo2").innerHTML = typeof(gname) + "/" + gname +"<hr>"
+	}
+    myfunction();
+	console.log(aaa);
+</script>
+
+
+
+

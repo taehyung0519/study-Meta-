@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*
+		   Array
+		   JAVA : 정적(Array) >> 배열의 크기 고정 ,  동적(collection) >> 다양한 class >> 배열크기변화
+		   int[] arr = new int[3];
+		   int[] arr = new int[]{1,2,3};
+		   int[] arr = {11,22,33}; key point
+		   
+		   List<String> list = new ArrayList<>();
+		   list.add("A")... 
+		   
+		   javascript >> 정적+동적 >> 동적배열
+		   선언방법
+		   let arr = [];  //stack 자료구조
+		   arr.push();
+		   arr.pop(); 
+		   	
+		*/
+		  let arr = [10,20,30];
+		  for(let i = 0 ; i < arr.length ; i++){
+			  document.write(arr[i] + "<br>");
+		  }
+		  
+		  //BAD
+		  //let eng = new Array(3);  //나쁜냄새 .... Bad 코드
+		  
+		  //Best
+		  let arr2=[];
+		  arr2.push(10);
+		  arr2.push(20);
+		  
+		  document.write(arr2.pop()); //20
+		  
+		  const cars = ["BMW","VOLVO","MINI"];
+		  for(let index in cars){
+			  console.log(cars[index]);
+		  }
+		  
+		  for(let car of cars){ //java 개선된 for
+			  console.log(car);
+		  }
+		  
+	</script>
+</head>
+<body>
+
+</body>
+</html>
