@@ -1,2 +1,0 @@
-word = C:\Temp\a.txt
-word = C:\Temp\new.txt
