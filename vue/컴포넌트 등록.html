@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div id="app">
+            <my-global-component></my-global-component>
+            <my-local-component></my-local-component>
+        </div>
+        <script src = "http://unpkg.com/vue@next"></script>
+        <script type ="module">
+            const { createApp, defineComponent } = Vue;
+
+            const app = createApp({
+                components:{
+                    'my-local-component' : defineComponent({
+                        template: '<div>지역 컴포넌트 입니다.</div>'
+                    })
+                }
+            });
+
+
+        // 전역 컴포넌트
+        app.component('my-global-component', defineComponent({
+            template:'<div>전역 컴포넌트의 내용</div>'
+        }));
+
+        app.mount("#app");
+    
+        
+        </script>
+    </body>
+</html>

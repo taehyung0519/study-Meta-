@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>돔 제어 테스트</h1>
+    이름 : <input type="text" id="username" name="username">
+    <input type="button" id="inputbutton" value="입력"><br>
+    <p>당신의 이름은<span id="output">_________</span></p>
+    <script>
+        const input = document.querySelector("#username");
+        const btn = document.querySelector("#inputbutton");
+        const output = document.querySelector("#output");
+        btn.addEventListener("click",function(){
+            let name = input.value;
+            // output.textContent = name;
+            // output.innertext = name;
+            input.value = "";
+            output.innerHTML = "<b>"+name+"<b>";
+        });
+    </script>
+</body>
+</html>

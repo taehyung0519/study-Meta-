@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http:localhost">click</a>
+</body>
+<script>
+    let el = document.querySelector("a");
+    doIt = a => alert(a);
+    doThat = func => func(200);
+    function doThat2(func) {
+        func(200);
+    }
+    el.addEventListener("click",function(event){
+        event.preventDefault();
+
+        //alert("HI~~");
+        doIt(10);
+        doThat2(doIt);
+    })
+    
+    doIt(10)
+    doThat2
+</script>
+</html>
